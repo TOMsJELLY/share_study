@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 2020_10_28_083046) do
   end
 
   create_table "problems", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
     t.text "statement", null: false
     t.text "answer", null: false
-    t.integer "grade_id", null: false
+    t.integer "grade_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
