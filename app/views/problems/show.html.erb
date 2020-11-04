@@ -1,3 +1,6 @@
+<%# JavaScriptファイルを読み込む。app/javascript/packs/problems/javatexShow.js %>
+<%= javascript_pack_tag 'problems/javatexShow' %>
+
 <%= render "shared/header" %>
 
 <div class="item-show">
@@ -23,10 +26,10 @@
     <% end%>
     </div>
 
-    <div class="problem-statement">
+    <div class="problem-statement", id="latex1">
       <%= @problem.statement %>
     </div>
-    <div class="problem-answer">
+    <div class="problem-answer", id="latex2">
       <span><%= @problem.answer %></span>
     </div>
     <div class="option">
