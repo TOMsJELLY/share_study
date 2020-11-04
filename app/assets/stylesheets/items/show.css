@@ -53,10 +53,10 @@
 .item-red-btn {
   text-align: center;
   background-color: #ea352d;
-  font-size: 24px;
+  font-size: 12px;
   font-weight: bold;
   color: #FFF;
-  margin: 20px 0px;
+  margin: 10px 0px;
   padding: 2vh 10vw;
 }
 
@@ -67,15 +67,37 @@
 .item-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 24px;
+  font-size: 12px;
   color: black;
-  margin: 20px 0px;
+  margin: 10px 0px;
   padding: 2vh 10vw;
 }
 
 .item-explain-box {
   font-size: 18px;
   margin: 40px 0px;
+}
+
+.problem-edit{
+  display: flex;
+}
+
+.problem-statement{
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+  margin: 10px 0px;
+}
+
+.problem-answer{
+  width: 100%;
+  padding: 16px 16px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+  margin: 10px 0px;
 }
 
 .detail-table {

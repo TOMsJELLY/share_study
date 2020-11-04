@@ -4,7 +4,8 @@ class CreateProblems < ActiveRecord::Migration[6.0]
       t.string :title,          null: false
       t.text :statement,        null: false
       t.text :answer,           null: false
-      t.integer :grade_id,      numericality: { other_than: 1 } 
+      t.integer :grade_id,      numericality: { other_than: 1 }
+      t.references :user,      null: false, foreign_key: true
 
       t.timestamps
     end

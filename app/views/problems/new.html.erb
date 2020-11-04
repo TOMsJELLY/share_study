@@ -1,5 +1,5 @@
-<%# JavaScriptファイルを読み込む。app/javascript/packs/items/priceCalc.js %>
-<%# <%= javascript_pack_tag 'items/priceCalc' %> %>
+<%# JavaScriptファイルを読み込む。app/javascript/packs/problems/javatex.js %>
+<%= javascript_pack_tag 'problems/javatex' %>
 
 <div class="items-sell-contents">
   <header class="items-sell-header">
@@ -35,8 +35,8 @@
           <span class="indispensable">必須</span>
         </div>
         <div class="real-time">
-          <%= f.text_area :statement, class:"items-text", id:"item-info", placeholder:"" ,rows:"7" ,maxlength:"1000" %>
-          <div class="javatex">
+          <%= f.text_area :statement, class:"items-text", id:"item-info1", placeholder:"" ,rows:"7" ,maxlength:"1000" %>
+          <div class="javatex", id="latex1">
           </div>
         </div>
       </div>
@@ -46,8 +46,8 @@
           <span class="indispensable">必須</span>
         </div>
         <div class="real-time">
-          <%= f.text_area :answer, class:"items-text", id:"item-info", placeholder:"" ,rows:"7" ,maxlength:"1000" %>
-          <div class="javatex">
+          <%= f.text_area :answer, class:"items-text", id:"item-info2", placeholder:"" ,rows:"7" ,maxlength:"1000" %>
+          <div class="javatex", id="latex2">
           </div>
         </div>
       </div>

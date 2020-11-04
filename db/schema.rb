@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2020_10_28_083046) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "user_id", null: false
+    t.bigint "problem_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["problem_id"], name: "index_comments_on_problem_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -34,8 +36,10 @@ ActiveRecord::Schema.define(version: 2020_10_28_083046) do
     t.text "statement", null: false
     t.text "answer", null: false
     t.integer "grade_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_problems_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,7 +56,9 @@ ActiveRecord::Schema.define(version: 2020_10_28_083046) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "problems"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "problems"
   add_foreign_key "favorites", "users"
+  add_foreign_key "problems", "users"
 end

@@ -7,6 +7,7 @@ class Problem < ApplicationRecord
   validates :answer,        presence: true
   validates :grade_id,      presence: true, numericality: { other_than: 1 } 
 
-  has_one :favorite
+  belongs_to :user
+  has_many :favorites
   has_many :comments
 end

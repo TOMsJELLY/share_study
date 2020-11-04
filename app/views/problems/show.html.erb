@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @problem.title %>
+    </h2>
+    <div class='item-img-content'>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+      </span>
+      <span class="item-postage">
+      </span>
+    </div>
+
+    <div class="problem-edit">
+    <% if user_signed_in? %>
+      <% if @problem.user.id == current_user.id %>
+        <%= link_to '商品の編集', edit_problem_path(@problem.id), method: :get, class: "item-red-btn" %>
+        <%= link_to '削除', problem_path, method: :delete, class:'item-destroy' %>
+      <% end%>
+    <% end%>
+    </div>
+
+    <div class="problem-statement">
+      <%= @problem.statement %>
+    </div>
+    <div class="problem-answer">
+      <span><%= @problem.answer %></span>
+    </div>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な問題の通報</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の問題
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの問題 ＞
+    </a>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

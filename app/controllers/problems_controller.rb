@@ -1,6 +1,6 @@
 class ProblemsController < ApplicationController
   def index
-    @problem = Problem.includes(:user)
+    @problems = Problem.includes(:user)
   end
 
   def new
@@ -17,10 +17,14 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def show
+    @problem = Problem.find(params[:id])
+  end
+
   private
 
   def problem_params
-    params.require(:problem).permit(:title, :statement, :answer, :grade_id)
+    params.require(:problem).permit(:title, :statement, :answer, :grade_id).merge(user_id: current_user.id)
   end
 
 end
