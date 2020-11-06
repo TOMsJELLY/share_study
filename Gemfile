@@ -60,4 +60,4 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem 'active_hash'
-gem 'unicorn'
+gem 'unicorn', '5.4.1'
